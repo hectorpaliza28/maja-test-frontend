@@ -1,0 +1,51 @@
+<div class="min-h-screen bg-gray-100 p-8 flex items-center justify-center relative">
+    <button class="absolute top-4 right-4 bg-red-500 text-white py-2 px-4 rounded" (click)="cerrarSesion()">
+        Cerrar Sesión
+    </button>
+    <div class="w-full max-w-md bg-white rounded shadow p-6">
+        <h2 class="text-2xl font-bold mb-4">Mi Perfil</h2>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-1">
+                    Nombre
+                </label>
+                <input
+                    [(ngModel)]="usuario.nombre"
+                    class="border rounded w-full py-2 px-3 focus:outline-none"
+                    disabled
+                />
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-1">
+                    Apellido
+                </label>
+                <input
+                    [(ngModel)]="usuario.apellido"
+                    class="border rounded w-full py-2 px-3 focus:outline-none"
+                    disabled
+                />
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-1">
+                    Email
+                </label>
+                <input
+                    [(ngModel)]="usuario.email"
+                    type="email"
+                    class="border rounded w-full py-2 px-3 focus:outline-none"
+                    disabled
+                />
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-1">
+                    Rol
+                </label>
+                <input
+                    [(ngModel)]="usuario.rol"
+                    class="border rounded w-full py-2 px-3 focus:outline-none"
+                    disabled
+                />
+            </div>
+        </div>
+    </div>
+</div>
