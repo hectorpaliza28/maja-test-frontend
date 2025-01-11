@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const folder = path.join(__dirname, 'dist/maja-test-frontend');
+const folder = path.join(__dirname, 'dist/maja-test-frontend/browser');
 
 app.use(express.static(folder));
 app.get('*', (req, res) => {
