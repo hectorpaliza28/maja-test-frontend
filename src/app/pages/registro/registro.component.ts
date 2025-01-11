@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,15 @@ export class RegistroComponent {
   password : string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit(){
+    if(this.authService.isLogged()){
+      if(this.authService.isAdmin())
+        this.router.navigate(['/admin']);
+      else
+        this.router.navigate(['/perfil']);
+    }
+  }
 
   submitRegistro(){
     this.authService.registro(this.nombre, this.apellido, this.email, this.password).subscribe({
